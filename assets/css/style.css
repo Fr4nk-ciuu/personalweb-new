@@ -65,6 +65,11 @@ img { max-width: 100%; display: block; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
 code { font-family: var(--mono); font-size: .88em; }
 
+/* 浏览器默认的 [hidden] { display:none } 优先级很低，
+   任何自定义的 display 都会把它盖掉（弹窗就踩过这个坑）。
+   这条 !important 是安全网，别删。 */
+[hidden] { display: none !important; }
+
 ::selection { background: rgba(79, 140, 255, .35); }
 
 /* 滚动条 */
